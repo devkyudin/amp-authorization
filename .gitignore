@@ -1,0 +1,15 @@
+﻿AmpAuth/.vs
+AmpAuth/AmpAuth.Core/bin
+AmpAuth/AmpAuth.Core/obj
+AmpAuth/AmpAuth.PAP/bin
+AmpAuth/AmpAuth.PAP/obj
+AmpAuth/AmpAuth.PDP/bin
+AmpAuth/AmpAuth.PDP/obj
+AmpAuth/AmpAuth.PEP/bin
+AmpAuth/AmpAuth.PEP/obj
+AmpAuth/AmpAuth.PIP/bin
+AmpAuth/AmpAuth.PIP/obj
+AmpAuth/AmpAuth.Repository/bin
+AmpAuth/AmpAuth.Repository/obj
+AmpAuth/AmpAuth.WebApi/bin
+AmpAuth/AmpAuth.WebApi/obj

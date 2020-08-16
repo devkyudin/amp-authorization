@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PolicySet"
+    targetNamespace="http://tempuri.org/PolicySet.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/PolicySet.xsd"
+    xmlns:mstns="http://tempuri.org/PolicySet.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="PolicySet" type="xacml:PolicySetType"/>
+  <xs:complexType name="PolicySetType">
+    <xs:sequence>
+      <xs:element ref="xacml:Description" minOccurs="0"/>
+      <xs:element ref="xacml:PolicyIssuer" minOccurs="0"/>
+      <xs:element ref="xacml:PolicySetDefaults" minOccurs="0"/>
+      <xs:element ref="xacml:Target"/>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="xacml:PolicySet"/>
+        <xs:element ref="xacml:Policy"/>
+        <xs:element ref="xacml:PolicySetIdReference"/>
+        <xs:element ref="xacml:PolicyIdReference"/>
+        <xs:element ref="xacml:CombinerParameters"/>
+        <xs:element ref="xacml:PolicyCombinerParameters"/>
+        <xs:element ref="xacml:PolicySetCombinerParameters"/>
+      </xs:choice>
+      <xs:element ref="xacml:ObligationExpressions" minOccurs="0"/>
+      <xs:element ref="xacml:AdviceExpressions" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="PolicySetId" type="xs:anyURI" use="required"/>
+    <xs:attribute name="Version" type="xacml:VersionType" use="required"/>
+    <xs:attribute name="PolicyCombiningAlgId" type="xs:anyURI" use="required"/>
+    <xs:attribute name="MaxDelegationDepth" type="xs:integer" use="optional"/>
+  </xs:complexType>
+
+</xs:schema>
