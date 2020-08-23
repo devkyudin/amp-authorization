@@ -3,7 +3,7 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="urn:oasis:names:tc:xacml:3.0:core:schema:wd-11"
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <!--<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>-->
   <xs:element name="Request" type="xacml:RequestType"/>
 	<xs:complexType name="RequestType">
 		<xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -119,7 +119,7 @@
 			<xs:element ref="xacml:Attribute" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="Category" type="xs:anyURI" use="required"/>
-		<xs:attribute ref="xml:id" use="optional"/>
+		<xs:attribute name="id" type="xs:ID" use="optional"/>
 	</xs:complexType>
 
 	<xs:element name="Attribute" type="xacml:AttributeType"/>
