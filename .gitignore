@@ -13,3 +13,4 @@ AmpAuth/AmpAuth.Repository/bin
 AmpAuth/AmpAuth.Repository/obj
 AmpAuth/AmpAuth.WebApi/bin
 AmpAuth/AmpAuth.WebApi/obj
+AmpAuth/AmpAuth.WebApi/node_modules

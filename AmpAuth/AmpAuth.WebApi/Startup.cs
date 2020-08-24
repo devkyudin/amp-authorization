@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AmpAuth.Repository.Classes;
 using AmpAuth.Repository.Interfaces;
 using AmpAuth.Repository.Repositories;
@@ -9,12 +5,10 @@ using AmpAuth.WebApi.Classes;
 using AmpAuth.WebApi.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace AmpAuth.WebApi
 {
@@ -39,6 +33,7 @@ namespace AmpAuth.WebApi
 
 			services.AddDbContext<RepositoryContext>(options =>
 				options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+			services.AddRazorPages();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,15 +42,18 @@ namespace AmpAuth.WebApi
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
+				app.UseWebpackDevMiddleware();
 			}
 
 			app.UseRouting();
 
 			//app.UseAuthorization();
+			app.UseStaticFiles();
 
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapControllers();
+				endpoints.MapRazorPages();
 			});
 		}
 	}

@@ -1,6 +1,5 @@
 using AmpAuth.Repository.Interfaces;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,7 +23,7 @@ namespace AmpAuth.WebApi
 
 				var factory = services.GetRequiredService<IRepositoryContextFactory>();
 
-				factory.CreateDbContext(config.GetConnectionString("DefaultConnection")).Database.Migrate(); // 3
+				//factory.CreateDbContext(config.GetConnectionString("DefaultConnection")).Database.Migrate(); // 3
 			}
 
 			host.Run();
